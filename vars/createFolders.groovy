@@ -5,7 +5,7 @@ def call(body) {
     body()
 
     pipeline{
-        agent any{
+        agent any
             stages{
                 stage('folder'){
                     steps{
@@ -16,6 +16,6 @@ def call(body) {
                     }
                 }
             }
-        }
+        
       }
 }
