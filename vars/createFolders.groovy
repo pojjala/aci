@@ -1,7 +1,11 @@
-def call(){
+def call(body){
+    def pipelineParams = [:]
+    body.resolveStrategy = Closer.DELEGATE_FIRST
+    body.delegate = pipelineParams
+    
     pipeline { 
         folder('NextGen') {
-            displayName('NextGen')
+            displayName('NextGenPrasad')
             description('Folder for NextGen')
         }
 
