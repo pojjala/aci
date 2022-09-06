@@ -5,9 +5,14 @@ def call(body) {
     body()
 
     pipeline{
-        folder('NextGen') {
-            displayName('NextGenPrasad')
-            description('Folder for NextGen')
+     //   folder('NextGen') {
+     //       displayName('NextGenPrasad')
+     //       description('Folder for NextGen')
+            
+        jobDsl scriptText: "folder('New Folder')",
+        jobDsl scriptText: "displayName('NextGenPrasad')",
+        jobDsl scriptText: "description('Folder for NextGen')",
+        ignoreExisting: true
         }
     }
 }
