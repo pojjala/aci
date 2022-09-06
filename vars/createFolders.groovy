@@ -11,8 +11,7 @@ def call(body) {
                     steps{
                         script{
                             jobDsl scriptText: "folder('prasadFolder')",
-                            jobDsl scriptText: "displayName('prasadFolder')",
-                            jobDsl scriptText: "description('Folder for prasadFolder')",                            
+                            jobDsl scriptText: "folder('prasadFolder/frontend')",
                             ignoreExisting: true
                         }
                     }
