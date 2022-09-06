@@ -5,7 +5,17 @@ def call(body) {
     body()
 
     pipeline{
-       jobDsl scriptText: "folder('New Folder')",    
-       ignoreExisting: true
+        agent any{
+            stages{
+                stage('folder'){
+                    steps{
+                        script{
+                            jobDsl scriptText: "folder('prasadFolder')",    
+                            ignoreExisting: true
+                        }
+                    }
+                }
+            }
+        }
       }
 }
