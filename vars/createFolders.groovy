@@ -9,8 +9,7 @@ def call(body) {
             stages{
                 stage('folder'){
                     steps{
-                        script{
-                            jobDsl scriptText: "folder('prasadFolder')",
+                        script{                       
                             jobDsl scriptText: "folder('prasadFolder/frontend')",
                             ignoreExisting: true
                         }
