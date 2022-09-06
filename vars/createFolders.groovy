@@ -10,7 +10,9 @@ def call(body) {
                 stage('folder'){
                     steps{
                         script{
-                            jobDsl scriptText: "folder('prasadFolder')",    
+                            jobDsl scriptText: "folder('prasadFolder')",
+                                displayName('NextGen')
+                                description('Folder for NextGen')
                             ignoreExisting: true
                         }
                     }
