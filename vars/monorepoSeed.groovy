@@ -10,7 +10,7 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
     // Find all Jenkinsfiles.
     echo "provisionItems------------------------->-"
     List<String> jenkinsfilePaths = findFiles(glob: '**/*/jenkinsfile').collect { it.path }
-
+    echo jenkinsfilePaths
     // Provision folder and Multibranch Pipelines.
     jobDsl(
             scriptText: libraryResource('createMultibranchPipelines.groovy'),
