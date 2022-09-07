@@ -4,7 +4,7 @@ def call(body) {
     body.delegate = config
     body()
     
-    String repositoryName = env.JOB_NAME.split('/')[1]
+    String repositoryName = env.JOB_NAME
     String rootFolderPath = "Generated/$repositoryName"
 
     pipeline{
