@@ -11,7 +11,7 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
 
     // Provision folder and Multibranch Pipelines.
     jobDsl(
-            scriptText: libraryResource('multiPipelines.groovy'),
+            scriptText: libraryResource('createMultibranchPipelines.groovy'),
             additionalParameters: [
                     jenkinsfilePathsStr: jenkinsfilePaths,
                     rootFolderStr      : rootFolderPath,
