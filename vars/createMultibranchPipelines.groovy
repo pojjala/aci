@@ -4,6 +4,7 @@ List<Path> ancestorFoldersPath(Path path) {
 }
 
 def generateFolders(List<Path> jenkinsfilePaths, Path rootFolder) {
+    echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
     jenkinsfilePaths
             .collect { ancestorFoldersPath(rootFolder.resolve(it).parent) }
             .flatten()
@@ -14,8 +15,5 @@ def generateFolders(List<Path> jenkinsfilePaths, Path rootFolder) {
                 folder(it.toString())
             }
 }
-
-List<Path> jenkinsfilePaths = jenkinsfilePathsStr.collect { Paths.get(it) }
-Path rootFolder = Paths.get(rootFolderStr)
 
 generateFolders(jenkinsfilePaths,rootFolder)
