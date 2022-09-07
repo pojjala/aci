@@ -8,6 +8,7 @@ import java.nio.file.Paths
  */
 List<String> provisionItems(String rootFolderPath, String repositoryURL) {
     // Find all Jenkinsfiles.
+    echo "provisionItems------------------------->-"
     List<String> jenkinsfilePaths = findFiles(glob: '**/*/jenkinsfile').collect { it.path }
 
     // Provision folder and Multibranch Pipelines.
