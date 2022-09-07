@@ -4,19 +4,22 @@ def call(body) {
     body.delegate = config
     body()
     
-    String repositoryName = env.JOB_NAME
-    String rootFolderPath = "Generated/$repositoryName"
-
     pipeline{
         agent any
-            stages{
-                stage('folder'){
+        environment{
+            BITBUCKET_PROJECT_URL = "https://github.com/pojjala/payments.git"
+            REPOSITORY_ROOT = "payments"
+            INCLUDE_PATTERN = "develope feature/app1"
+            }
+        stages{
+            stage('Provision and execute any new Multibranch Pipeline'){
                     steps{
-                        echo "--------------------------"
-                        echo repositoryName.toString()
-                        echo rootFolderPath.toString()
-                        echo "--------------------------"
-                        script{                       
+                        checkout scm
+                        script{
+                            String rootFolderPath = env.REPOSITORY_ROOT
+                            echo "--------------------------"
+                            echo rootFolderPath.toString()
+                            echo "--------------------------"
                             jobDsl scriptText: "folder('prasadFolder')",
                             ignoreExisting: true
                         }
