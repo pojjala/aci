@@ -11,11 +11,11 @@ def call(body) {
         agent any
             stages{
                 stage('folder'){
-                    echo "--------------------------"
-                    echo repositoryName.toString()
-                    echo rootFolderPath.toString()
-                    echo "--------------------------"
                     steps{
+                        echo "--------------------------"
+                        echo repositoryName.toString()
+                        echo rootFolderPath.toString()
+                        echo "--------------------------"
                         script{                       
                             jobDsl scriptText: "folder('prasadFolder')",
                             ignoreExisting: true
