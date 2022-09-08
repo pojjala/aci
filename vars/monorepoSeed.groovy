@@ -11,7 +11,7 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
     List<String> jenkinsfilePaths = findFiles(glob: '**/*/jenkinsfile').collect { it.path }
     // Provision folder and Multibranch Pipelines.
         jobDsl(
-            scriptText: libraryResource('aci/resources/createMultibranchPipelines.groovy'),
+            scriptText: libraryResource('createMultibranchPipelines.groovy'),
             additionalParameters: [
                     jenkinsfilePathsStr: jenkinsfilePaths,
                     rootFolderStr      : rootFolderPath,
