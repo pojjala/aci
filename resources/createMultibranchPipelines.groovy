@@ -7,7 +7,7 @@ List<Path> ancestorFoldersPath(Path path) {
 }
 
 def generateFolders(List<Path> jenkinsfilePaths, Path rootFolder) {
-    echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+    echo "in generateFolders+++++++++++++++++++++++++++++++++++++++++++++++++++"
     jenkinsfilePaths
             .collect { ancestorFoldersPath(rootFolder.resolve(it).parent) }
             .flatten()
