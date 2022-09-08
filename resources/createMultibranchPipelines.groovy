@@ -18,5 +18,3 @@ def generateFolders(List<Path> jenkinsfilePaths, Path rootFolder) {
                 folder(it.toString())
             }
 }
-
-generateFolders(jenkinsfilePaths,rootFolder)
