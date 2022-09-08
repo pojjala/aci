@@ -9,7 +9,7 @@ import java.nio.file.Paths
 List<String> provisionItems(String rootFolderPath, String repositoryURL) {
     // Find all Jenkinsfiles.
     List<String> jenkinsfilePaths = findFiles(glob: '**/*/jenkinsfile').collect { it.path }
-    // Provision folder and Multibranch Pipelines.
+    echo "Beginning of provisionItems  Method -------------------------->"       
         jobDsl(
             scriptText: libraryResource('createMultibranchPipelines.groovy'),
             additionalParameters: [
@@ -21,6 +21,7 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
             // unless you only provision items from the default branch.
             removedJobAction: 'IGNORE'
     )
+    echo "End of provisionItems  Method -------------------------->"       
     return jenkinsfilePaths
 }
 
