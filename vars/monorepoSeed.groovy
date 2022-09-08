@@ -21,8 +21,6 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
             // unless you only provision items from the default branch.
             removedJobAction: 'IGNORE'
     )
-    echo "before Return ------------------------>-"
-
     return jenkinsfilePaths
 }
 
@@ -51,8 +49,8 @@ def call(body) {
                             echo "--------------------------"
                             List<String> jenkinsfilePaths = provisionItems(rootFolderPath, env.BITBUCKET_PROJECT_URL)
                             echo "--------------------------"                           
-                            jobDsl scriptText: "folder('prasadFolder')",
-                            ignoreExisting: true
+       //                   jobDsl scriptText: "folder('prasadFolder')",
+       //                   ignoreExisting: true
                         }
                     }
                 }
