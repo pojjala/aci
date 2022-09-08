@@ -42,7 +42,8 @@ def call(body) {
             stage('Provision and execute any new Multibranch Pipeline'){
                     steps{
                         checkout scm
-                        script{                        
+                        script{
+                            String rootFolderPath = env.REPOSITORY_ROOT
                             List<String> jenkinsfilePaths = provisionItems(rootFolderPath, env.BITBUCKET_PROJECT_URL)
                             echo "end of stage--------------------------"                           
                         }
