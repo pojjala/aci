@@ -9,10 +9,9 @@ import java.nio.file.Paths
 List<String> provisionItems(String rootFolderPath, String repositoryURL) {
     // Find all Jenkinsfiles.
     List<String> jenkinsfilePaths = findFiles(glob: '**/*/jenkinsfile').collect { it.path }
-    
     // Provision folder and Multibranch Pipelines.
-    jobDsl(
-            scriptText: libraryResource('createMultibranchPipelines.groovy'),
+        jobDsl(
+            scriptText: libraryResource('aci/resources/createMultibranchPipelines.groovy'),
             additionalParameters: [
                     jenkinsfilePathsStr: jenkinsfilePaths,
                     rootFolderStr      : rootFolderPath,
