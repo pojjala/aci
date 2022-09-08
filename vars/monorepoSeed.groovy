@@ -50,9 +50,7 @@ def call(body) {
                             echo rootFolderPath.toString()
                             echo "--------------------------"
                             List<String> jenkinsfilePaths = provisionItems(rootFolderPath, env.BITBUCKET_PROJECT_URL)
-                            echo "--------------------------"
-                            echo jenkinsfilePaths.toString()
-                            echo "--------------------------"
+                            echo "--------------------------"                           
                             jobDsl scriptText: "folder('prasadFolder')",
                             ignoreExisting: true
                         }
