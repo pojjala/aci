@@ -22,7 +22,7 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
             removedJobAction: 'IGNORE'
     )
     
-    generateFolders(jenkinsfilePaths, rootFolder)
+    generateFolders(jenkinsfilePaths, repositoryURL)
 
     echo "End of provisionItems  Method -------------------------->"       
     return jenkinsfilePaths
