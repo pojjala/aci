@@ -21,6 +21,9 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
             // unless you only provision items from the default branch.
             removedJobAction: 'IGNORE'
     )
+    
+    generateFolders(jenkinsfilePaths, rootFolder)
+
     echo "End of provisionItems  Method -------------------------->"       
     return jenkinsfilePaths
 }
@@ -54,3 +57,6 @@ def call(body) {
         
       }
 }
+
+
+
