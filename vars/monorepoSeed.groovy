@@ -57,6 +57,8 @@ def call(body) {
 }
 
 List<Path> jenkinsfilePaths = jenkinsfilePathsStr.collect { Paths.get(it) }
-Path rootFolder = Paths.get(rootFolderStr)
-
+echo jenkinsfilePaths.toString()
+echo 'printenv'
+Path rootFoldger = Paths.get(rootFolderStr)
+echo "Before    Generated -------------------------->"       
 generateFolders(jenkinsfilePaths, rootFolder)
