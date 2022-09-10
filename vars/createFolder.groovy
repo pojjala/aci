@@ -16,12 +16,8 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         checkout scm
-                        script{                          
-                          def folderName = PROJECT_NAME.toUpperCase()
-                          def adminGroup = "ROLE_${folderName}_ADMIN"
-                          def opsGroup = "ROLE_${folderName}_READER"
 //                           jobDsl(scriptText: "folder('folderName')")  
-                          jobDsl(scriptText: libraryResource('myFoldertest.groovy'),
+                          jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),
                                  removedJobAction: 'IGNORE')
  //                                folder(folderName) {
 //                                 displayName(folderName)
