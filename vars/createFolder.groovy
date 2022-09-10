@@ -16,6 +16,7 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         checkout scm
+                        script{   
 //                           jobDsl(scriptText: "folder('folderName')")  
                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),
                                  removedJobAction: 'IGNORE')
