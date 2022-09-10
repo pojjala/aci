@@ -22,8 +22,6 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
             removedJobAction: 'IGNORE'
     )
     
-    generateFolders(jenkinsfilePaths, repositoryURL)
-
     echo "End of provisionItems  Method -------------------------->"       
     return jenkinsfilePaths
 }
@@ -58,5 +56,7 @@ def call(body) {
       }
 }
 
+List<Path> jenkinsfilePaths = jenkinsfilePathsStr.collect { Paths.get(it) }
+Path rootFolder = Paths.get(rootFolderStr)
 
-
+generateFolders(jenkinsfilePaths, rootFolder)
