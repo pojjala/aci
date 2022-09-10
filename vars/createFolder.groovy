@@ -15,16 +15,11 @@ def call(body) {
         stages{
             stage('Creation of folders'){
                     steps{
-                          $class: 'ExecuteDslScripts',
-                          targets: ['aci/vars/myFoldertest.groovy']
-                        
-                        
-//                         checkout scm
-//                         script{   
-// //                           jobDsl(scriptText: "folder('folderName')")  
-//                              jobDsl(scriptText: "folder('folderName')")  
+                        checkout scm
+                        script{   
+                          jobDsl(scriptText: "folder('folderName')")  
 //                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
-//                         }
+                        }
                     }
                 }
       }
