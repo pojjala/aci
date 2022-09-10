@@ -16,7 +16,7 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         checkout scm
-                        DSL Script :                          
+                        script{                          
                           def folderName = PROJECT_NAME.toUpperCase()
                           def adminGroup = "ROLE_${folderName}_ADMIN"
                           def opsGroup = "ROLE_${folderName}_READER"
@@ -31,7 +31,7 @@ def call(body) {
                                    ])
                                     permissionAll(adminGroup) 
                                 }
-                                                   
+                          }                      
                         }
                     }
                 }
