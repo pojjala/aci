@@ -16,7 +16,8 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         [ $class: 'ExecuteDslScripts',
-                          targets: ['aci/vars/myFoldertest.groovy', 'jobs/common.groovy']]
+                          targets: ['aci/vars/myFoldertest.groovy']
+                        ]
                         
 //                         checkout scm
 //                         script{   
