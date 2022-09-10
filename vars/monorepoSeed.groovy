@@ -15,7 +15,7 @@ List<String> provisionItems(String rootFolderPath, String repositoryURL) {
             additionalParameters: [
                     jenkinsfilePathsStr: jenkinsfilePaths,
                     rootFolderStr      : rootFolderPath,
-       //             repositoryURL      : env.GIT_URL
+                    repositoryURL      : env.GIT_URL
             ],
             // The following may be set to 'DELETE'. Note that branches will compete to delete and recreate items
             // unless you only provision items from the default branch.
