@@ -15,7 +15,7 @@ def call(body) {
         stages{
             stage('Creation of folders'){
                     steps{
-                        checkout scm
+//                         checkout scm
                         script{   
 //                             jobDsl(scriptText: folder('PrasadOVLN') )
                             jobDsl(scriptText: "folder('myFolder')")
