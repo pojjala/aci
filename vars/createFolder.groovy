@@ -16,7 +16,7 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
 //                         checkout scm
-//                         script{   
+                        script{   
 //                         jobDsl {
 //                                 folder('project-a') {
 //                                     displayName('Project A')
