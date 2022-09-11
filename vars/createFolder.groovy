@@ -16,10 +16,10 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         checkout scm
-//                         script{   
-                            jobDsl { folder('folderName') }
+                        script{   
+                            jobDsl(scriptText: folder('PrasadOVLN') )
 //                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
-//                         }
+                        }
                     }
                 }
       }
