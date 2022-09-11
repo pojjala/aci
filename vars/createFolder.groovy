@@ -17,13 +17,13 @@ def call(body) {
                     steps{
 //                         checkout scm
 //                         script{   
-                        jobDsl {
-                                folder('project-a') {
-                                    displayName('Project A')
-                                    description('Folder for project A')
-                                }                        
-                            }
-                            jobDsl(scriptText: "folder('myFolder')")
+//                         jobDsl {
+//                                 folder('project-a') {
+//                                     displayName('Project A')
+//                                     description('Folder for project A')
+//                                 }                        
+//                             }
+                            jobDsl(scriptText: "folder('project-ovln')")
 //                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
 //                         }
                     }
