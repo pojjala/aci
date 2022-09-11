@@ -17,7 +17,8 @@ def call(body) {
                     steps{
                         checkout scm
                         script{   
-                            jobDsl(scriptText: folder('PrasadOVLN') )
+//                             jobDsl(scriptText: folder('PrasadOVLN') )
+                            jobDsl(scriptText: "folder('myFolder')")
 //                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
                         }
                     }
