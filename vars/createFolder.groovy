@@ -13,11 +13,14 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         checkout scm
-                        script{   
-                             jobDsl(scriptText: "folder('project-ovln')")
-//                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
+                        dsl{ 
+                            folder('project-ovln')
                            }
-                        }
+//                         script{   
+//                              jobDsl(scriptText: "folder('project-ovln')")
+// //                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
+//                            }
+//                         }
              }
         }  
      }
