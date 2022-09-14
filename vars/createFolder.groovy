@@ -1,7 +1,8 @@
 def call(body) {
-    def project = 'payments'
+//     def project = 'payments'
 //     https://github.com/pojjala/payments.git
-    def branchApi = new URL("https://github.com/pojjala/${project}/branches")
+    def project = 'quidryan/aws-sdk-test'
+    def branchApi = new URL("https://api.github.com/repos/${project}/branches")
     def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
     branches.each {
         def branchName = it.name
