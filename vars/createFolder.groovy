@@ -1,43 +1,24 @@
 def call(body) {
-//     def project = 'payments'
-//     https://github.com/pojjala/payments.git
-    def project = 'quidryan/aws-sdk-test'
-    def branchApi = new URL("https://api.github.com/repos/${project}/branches")
-    def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
-    branches.each {
-        def branchName = it.name
-        def jobName = "${project}-${branchName}".replaceAll('/','-')
-        job(jobName) {
-            scm {
-                git("git://github.com/${project}.git", branchName)
+    def config = [:]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = config
+    body()
+    
+    pipeline{
+        agent any
+        environment{
+            PROJECT_NAME = "ACIWorldWide"
             }
-            steps {
-                maven("test -Dproject.name=${project}/${branchName}")
-            }
-        }
-    }
-    
-    
-//     def config = [:]
-//     body.resolveStrategy = Closure.DELEGATE_FIRST
-//     body.delegate = config
-//     body()
-    
-//     pipeline{
-//         agent any
-//         environment{
-//             PROJECT_NAME = "ACIWorldWide"
-//             }
-//         stages{
-//             stage('Creation of folders'){
-//                     steps{
-//                         checkout scm
-//                         script{   
-// //                              jobDsl(scriptText: "folder('project-ovln')")
-//                           jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
-//                            }
-//                         }
-//              }
-//         }  
-//      }
+        stages{
+            stage('Creation of folders'){
+                    steps{
+                        checkout scm
+                        script{   
+//                              jobDsl(scriptText: "folder('project-ovln')")
+                          jobDsl(scriptText: libraryResource('aci/vars/myFoldertest.groovy'),removedJobAction: 'IGNORE')   
+                           }
+                        }
+             }
+        }  
+     }
 }
