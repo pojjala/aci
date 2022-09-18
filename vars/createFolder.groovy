@@ -16,7 +16,7 @@ def call(body) {
         stages{
             stage('Creation of folders'){
                     steps{
-                        env.PROJECT_NAME = "ACIWorldWide"
+                        PROJECT_NAME = "ACIWorldWide"
                         checkout scm
                         script{   
                          echo "Prepare workspace"
