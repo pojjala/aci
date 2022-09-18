@@ -1,6 +1,6 @@
 def call(body) {
     def config = [:]
-    def PROJECT_NAME = "ABC"
+    def env.PROJECT_NAME = "ABC"
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
@@ -8,7 +8,7 @@ def call(body) {
     pipeline{
         agent any
         environment{
-            PROJECT_NAME = "ACIWorldWide"
+            env.PROJECT_NAME = "ACIWorldWide"
             }
         stages{
             stage('Creation of folders'){
@@ -19,7 +19,7 @@ def call(body) {
                          sh "pwd" 
                          sh "ls -ll" 
                             
-                            jobDsl(scriptText: 'folder("${PROJECT_NAME}")')
+                            jobDsl(scriptText: 'folder("${env.PROJECT_NAME}")')
 //                           jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
                            }
                         }
