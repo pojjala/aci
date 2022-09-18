@@ -15,6 +15,9 @@ def call(body) {
                     steps{
                         checkout scm
                         script{   
+                         echo "Prepare workspace"
+                         sh "pwd" 
+                         sh "ls -ll" 
 //                             jobDsl(scriptText: 'folder("${PROJECT_NAME}")')
                           jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
                            }
