@@ -17,7 +17,7 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         sh '''
-                            export env.PROJECT_NAME="ACIWorldWide" 
+                            export PROJECT_NAME="ACIWorldWide" 
                         '''
                         checkout scm
                         script{   
