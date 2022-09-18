@@ -17,14 +17,14 @@ def call(body) {
             stage('Creation of folders'){
                     steps{
                         sh '''
-                            export PROJECT_NAME="ACIWorldWide" 
+                            export env.PROJECT_NAME="ACIWorldWide" 
                         '''
                         checkout scm
                         script{   
                          echo "Prepare workspace"
                          sh "pwd" 
                          sh "ls -ll" 
-                            
+                         echo  ${PROJECT_NAME}                           
                             jobDsl(scriptText: 'folder("${PROJECT_NAME}")')
 //                           jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
                            }
