@@ -7,9 +7,12 @@ def call(body) {
     
     pipeline{
         agent any
-        environment{
-            PROJECT_NAME = "ACIWorldWide"
-            }
+//         environment{
+//             PROJECT_NAME = "ACIWorldWide"
+//             }
+        environment { 
+            env.PROJECT_NAME = "ACIWorldWide"
+        } 
         stages{
             stage('Creation of folders'){
                     steps{
