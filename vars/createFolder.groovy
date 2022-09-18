@@ -1,6 +1,6 @@
 def call(body) {
     def config = [:]
-//     def PROJECT_NAME = "ABC"
+    def PROJECT_NAME = "ABC"
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
@@ -18,8 +18,9 @@ def call(body) {
                          echo "Prepare workspace"
                          sh "pwd" 
                          sh "ls -ll" 
-//                             jobDsl(scriptText: 'folder("${PROJECT_NAME}")')
-                          jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
+                            
+                            jobDsl(scriptText: 'folder("${PROJECT_NAME}")')
+//                           jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
                            }
                         }
              }
