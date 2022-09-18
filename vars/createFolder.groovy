@@ -14,8 +14,8 @@ def call(body) {
                     steps{
                         checkout scm
                         script{   
-//                              jobDsl(scriptText: "folder('project-ovln')")
-                          jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
+                             jobDsl(scriptText: "folder('project-ovln')")
+//                           jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
                            }
                         }
              }
