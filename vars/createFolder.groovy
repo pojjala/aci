@@ -11,7 +11,7 @@ def call(body) {
 //             PROJECT_NAME = "ACIWorldWide"
 //             }
         environment { 
-            env.PROJECT_NAME = "ACIWorldWide"
+            PROJECT_NAME = "ACIWorldWide"
         } 
         stages{
             stage('Creation of folders'){
