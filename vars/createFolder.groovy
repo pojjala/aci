@@ -7,9 +7,6 @@ def call(body) {
     
     pipeline{
         agent any
-//         environment{
-//             PROJECT_NAME = "ACIWorldWide"
-//             }
 //         environment { 
 //             PROJECT_NAME ="ACIWorldWide"
 //         } 
@@ -24,7 +21,7 @@ def call(body) {
                          echo "Prepare workspace"
                          sh "pwd" 
                          sh "ls -ll" 
-                         echo  PROJECT_NAME                           
+                         echo  "${PROJECT_NAME}"                           
                             jobDsl(scriptText: 'folder("${PROJECT_NAME}")')
 //                           jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
                            }
