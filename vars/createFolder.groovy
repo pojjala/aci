@@ -1,6 +1,6 @@
 def call(body) {
     def config = [:]
-    def PROJECT_NAME = "ABC"
+//     def PROJECT_NAME = "ABC"
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
