@@ -10,12 +10,13 @@ def call(body) {
 //         environment{
 //             PROJECT_NAME = "ACIWorldWide"
 //             }
-        environment { 
-            PROJECT_NAME = "ACIWorldWide"
-        } 
+//         environment { 
+//             PROJECT_NAME = "ACIWorldWide"
+//         } 
         stages{
             stage('Creation of folders'){
                     steps{
+                        env.PROJECT_NAME = "ACIWorldWide"
                         checkout scm
                         script{   
                          echo "Prepare workspace"
