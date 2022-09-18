@@ -8,7 +8,7 @@ def call(body) {
     pipeline{
         agent any
         environment{
-            env.PROJECT_NAME = "ACIWorldWide"
+            PROJECT_NAME = "ACIWorldWide"
             }
         stages{
             stage('Creation of folders'){
@@ -19,7 +19,7 @@ def call(body) {
                          sh "pwd" 
                          sh "ls -ll" 
                             
-                            jobDsl(scriptText: 'folder("${env.PROJECT_NAME}")')
+                            jobDsl(scriptText: 'folder("${PROJECT_NAME}")')
 //                           jobDsl(scriptText: libraryResource('aci/resouces/folderTest.groovy'),removedJobAction: 'IGNORE')   
                            }
                         }
